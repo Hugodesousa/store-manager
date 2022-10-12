@@ -9,7 +9,8 @@ describe('Testa o redorno dos produtos cadastrados com os endpoints "/products" 
   it('Testa se todos os produtos da lista são retornados no endpoint "/products"', async () => {
     sinon.stub(connection, 'execute').resolves(products);
     const getList = await productsModel.findAllProducts();
-    expect(getList).to.be.equal(products);
+    console.log(getList);
+    expect(getList).to.be.deep.equal(products);
   });
   
   it('Testa um unico produto e retornados no endpoint "/products/:id"', async () => {
