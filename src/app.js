@@ -1,5 +1,6 @@
 const express = require('express');
 // const connection = require('./models/db/connection');
+const routerProducts = require('./router/products.router');
 
 const app = express();
 
@@ -7,6 +8,8 @@ const app = express();
 app.get('/', (_request, response) => {
   response.send();
 });
+
+app.use('/products', routerProducts);
 
 // const port = 9229;
 
