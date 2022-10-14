@@ -9,7 +9,6 @@ describe('Testa o redorno das funções findAllProducts e findProductsByID', () 
   it('Testa o redorno da função findAllProducts', async () => {
     sinon.stub(connection, 'execute').resolves([products]);
     const getList = await productsModel.findAllProducts();
-    console.log(getList);
     expect(getList).to.be.deep.equal(products);
   });
   

@@ -7,6 +7,7 @@ const allProducts = async (_req, res) => {
 
 const productbyID = async (req, res) => {
   const result = await productsService.getProductsByID(req.params.id);
+  console.log('result', result);
   if (result === 'error') {
     return res.status(404).json({ message: 'Product not found' });
   }
