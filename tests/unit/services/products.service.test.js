@@ -49,7 +49,7 @@ describe('testa erros', () => {
   after(() => {
     sinon.restore();
   })
-  it('', async () => {
+  it('Testa se um erro e lançando ao procurat por um id que não existe', async () => {
     try {
       await productsService.getProductsByID(5);
     } catch (error) {

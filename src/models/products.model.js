@@ -23,7 +23,6 @@ const insertProducts = async (newProduct) => {
     id: insertId,
     name: newProduct.name,
   };
-  console.log(product);
   return product;
 };
 
