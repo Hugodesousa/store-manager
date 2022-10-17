@@ -12,7 +12,10 @@ const getProductsByID = async (id) => {
     const result = await productsModel.findProductsByID(id);
     return result;
   }
-  return 'error';
+  const error = new Error('Product not found');
+  error.name = 'Not found error';
+  error.status = 404;
+  throw error; 
 };
 
 const postItem = async (newProduct) => {

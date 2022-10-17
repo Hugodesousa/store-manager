@@ -63,8 +63,6 @@ describe('Testa a inserção de um produto na camada controller', () => {
   })
   it('Testa o retorno da função "postProduct"', async () => {
     const productById = await productsController.postProduct(req, res);
-    console.log('0', products[0]);
-    console.log('prod', productById);
     expect(res.status).to.have.been.calledWith(201)
     expect(res.json).to.have.been.calledWith(products[0])
   });
