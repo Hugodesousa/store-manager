@@ -21,3 +21,19 @@ describe('Testa o redorno das funções findAllProducts e findProductsByID', () 
   afterEach(sinon.restore);
 
 });
+
+describe('', () => {
+
+  it('', async () => {
+    sinon.stub(connection, 'execute').resolves(products);
+    const newProduct = {
+      "name": "ProdutoX"
+    };
+    const insert = await productsModel.insertProducts(newProduct);
+    expect(insert).to.be.deep.equal(insert);
+  });
+
+
+  afterEach(sinon.restore);
+
+});

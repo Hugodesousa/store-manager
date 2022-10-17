@@ -15,7 +15,14 @@ const getProductsByID = async (id) => {
   return 'error';
 };
 
+const postItem = async (newProduct) => {
+  // console.log('aqui', newProduct);
+  const result = await productsModel.insertProducts(newProduct);
+  return result;
+};
+
 module.exports = {
   getAllProducts,
   getProductsByID,
+  postItem,
 };

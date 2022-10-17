@@ -6,7 +6,7 @@ const { productsService } = require('../../../src/services');
 const chai = require('chai');
 const { expect } = require('chai');
 chai.use(sinonChai);
-describe('Testa o retorno da camada controler', () => {
+describe('Testa o retorno da da função "getAllProducts" na camada controler', () => {
   const res = {}
   const req = {} 
   before(() => {
@@ -17,7 +17,7 @@ describe('Testa o retorno da camada controler', () => {
   after(() => {
     sinon.restore();
   })
-  it('Testa o retorno da função "getAllProducts"', async () => {
+  it('Testa se e retornada a lista com todos os produtos', async () => {
 
     const allProduct = await productsController.allProducts(req, res);
     // console.log('sdf', allProduct);
@@ -26,7 +26,7 @@ describe('Testa o retorno da camada controler', () => {
 
 });
 
-describe('testa busca por id na camada controller', () => {
+describe('Testa busca por id na camada controller', () => {
   const res = {};
   const req = {};
   before(() => {
@@ -43,5 +43,29 @@ describe('testa busca por id na camada controller', () => {
     console.log('0', products[0]);
     console.log('prod', productById);
     expect(res.status).to.have.been.calledWith(200)
+    expect(res.json).to.have.been.calledWith(products[0])
+  });
+});
+
+describe('Testa a inserção de um produto na camada controller', () => {
+  const res = {};
+  const req = {};
+  before(() => {
+    req.body = {
+      "name": "ProdutoE"
+    }
+    res.status = sinon.stub().returns(res)
+    res.json = sinon.stub().returns(products)
+    sinon.stub(productsService, 'postItem').resolves(products[0])
+  });
+  after(() => {
+    sinon.restore();
+  })
+  it('Testa o retorno da função "postProduct"', async () => {
+    const productById = await productsController.postProduct(req, res);
+    console.log('0', products[0]);
+    console.log('prod', productById);
+    expect(res.status).to.have.been.calledWith(201)
+    expect(res.json).to.have.been.calledWith(products[0])
   });
 });
