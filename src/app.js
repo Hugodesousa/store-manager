@@ -2,6 +2,7 @@ const express = require('express');
 require('express-async-errors');
 // const connection = require('./models/db/connection');
 const routerProducts = require('./router/products.router');
+const routerSales = require('./router/sales.router');
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.get('/', (_request, response) => {
 
 app.use('/products', routerProducts);
 
+app.use('/sales', routerSales);
 // const port = 9229;
 
 // app.listen(port, async () => {

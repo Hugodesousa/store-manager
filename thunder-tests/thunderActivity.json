@@ -242,16 +242,16 @@
     "colId": "history",
     "containerId": "",
     "name": "localhost:3000/products/",
-    "url": "localhost:3000/products/",
+    "url": "localhost:3000/sales/",
     "method": "POST",
     "sortNum": 0,
     "created": "2022-10-15T19:41:20.018Z",
-    "modified": "2022-10-17T01:32:34.436Z",
+    "modified": "2022-10-18T02:31:00.603Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"ProdutoX\"\n}",
+      "raw": "[\n  {\n    \"productId\": 1,\n    \"quantity\": 1\n  },\n  {\n    \"productId\": 2,\n    \"quantity\": 5\n  }\n]",
       "form": []
     },
     "tests": []
