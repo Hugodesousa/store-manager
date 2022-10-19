@@ -9,9 +9,12 @@ const findAllProducts = async () => {
 };
 
 const findProductsByID = async (id) => {
+  // console.log(id);
   const [[product]] = await connection.execute(
     'SELECT * FROM StoreManager.products WHERE id = ?', [id],
     );
+    // console.log(product);
+  
     return camelize(product);
   };
   
