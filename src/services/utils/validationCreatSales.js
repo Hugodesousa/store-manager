@@ -1,5 +1,4 @@
 const Joi = require('joi');
-// const { productsModel } = require('../../models');
 
 const parameterIsRequired = Joi.object({
   productId: Joi.number().required(),
