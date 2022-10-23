@@ -40,8 +40,6 @@ describe('Testa busca por id na camada controller', () => {
   })
   it('Testa o retorno da função "productsByID"', async () => { 
     const productById = await productsController.productbyID(req, res);
-    console.log('0', products[0]);
-    console.log('prod', productById);
     expect(res.status).to.have.been.calledWith(200)
     expect(res.json).to.have.been.calledWith(products[0])
   });

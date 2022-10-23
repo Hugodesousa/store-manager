@@ -5,6 +5,19 @@ const postSales = async (req, res) => {
   return res.status(201).json(result);
 };
 
+const allSales = async (_req, res) => { 
+  const result = await salesService.getAllSales();
+ console.log('result', result);
+  return res.status(200).json(result);
+};
+
+const saleByID = async (req, res) => {
+  const result = await salesService.getSalesByID(+req.params.id);
+  return res.status(200).json(result);
+};
+
 module.exports = {
   postSales,
+  allSales,
+  saleByID,
 };

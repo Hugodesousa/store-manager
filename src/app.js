@@ -35,7 +35,7 @@ app.use((error, _req, res, _next) => {
   if (error.name) {
     res.status(error.status).send({ message: error.message });
   } 
-  res.status(500).send({ message: 'eita' });
+  res.status(500).send({ message: 'generic error' });
 });
 // app.use((_error, _req, _res, _next) => { 
 //   res.status(500).send({ message: 'eita' });
