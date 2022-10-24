@@ -23,8 +23,16 @@ const postItem = async (newProduct) => {
   }
 };
 
+const deleteItem = async (id) => { 
+  const list = await productsModel.findAllProducts();
+  if (validationProductID(list, id)) {
+    await productsModel.deleteProductByID(id);
+  }
+};
+
 module.exports = {
   getAllProducts,
   getProductsByID,
   postItem,
+  deleteItem,
 };

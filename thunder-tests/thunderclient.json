@@ -4,11 +4,11 @@
     "colId": "15ff3951-8b64-4ae5-b3f8-0ee7a898762d",
     "containerId": "",
     "name": "get products",
-    "url": "http://localhost:3000/sales/",
+    "url": "http://localhost:3000/products/",
     "method": "GET",
     "sortNum": 10000,
     "created": "2022-10-15T19:07:09.547Z",
-    "modified": "2022-10-23T13:14:44.407Z",
+    "modified": "2022-10-24T12:37:06.829Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -18,16 +18,16 @@
     "colId": "15ff3951-8b64-4ae5-b3f8-0ee7a898762d",
     "containerId": "",
     "name": "new item",
-    "url": "localhost:3000/sales/",
+    "url": "localhost:3000/products",
     "method": "POST",
     "sortNum": 20000,
     "created": "2022-10-15T20:06:54.673Z",
-    "modified": "2022-10-17T20:39:43.344Z",
+    "modified": "2022-10-24T12:36:47.888Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "[\n  {\n    \"productId\": 1,\n    \"quantity\": 1\n  },\n  {\n    \"productId\": 2,\n    \"quantity\": 5\n  }\n]",
+      "raw": "{\n  \"name\": \"ProdutoX\"\n}",
       "form": []
     },
     "tests": []
@@ -49,6 +49,34 @@
       "raw": "[\n  {\n    \"productId\": 3,\n    \"quantity\": 1\n  },\n  {\n    \"productId\": 2,\n    \"quantity\": 5\n  }\n]",
       "form": []
     },
+    "tests": []
+  },
+  {
+    "_id": "5e059774-7481-4330-a5e5-5cf57cf434e0",
+    "colId": "15ff3951-8b64-4ae5-b3f8-0ee7a898762d",
+    "containerId": "",
+    "name": "GET sales",
+    "url": "localhost:3000/sales/",
+    "method": "GET",
+    "sortNum": 40000,
+    "created": "2022-10-24T12:35:44.983Z",
+    "modified": "2022-10-24T12:35:44.983Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "6dda4eee-b5ae-43c7-82f3-c5cd5c0c7046",
+    "colId": "15ff3951-8b64-4ae5-b3f8-0ee7a898762d",
+    "containerId": "",
+    "name": "Delete Product",
+    "url": "localhost:3000/products/4",
+    "method": "DELETE",
+    "sortNum": 50000,
+    "created": "2022-10-24T13:02:00.445Z",
+    "modified": "2022-10-24T13:02:00.445Z",
+    "headers": [],
+    "params": [],
     "tests": []
   }
 ]

@@ -15,8 +15,14 @@ const postProduct = async (req, res) => {
   return res.status(201).json(result);
 };
 
+const deleteProduct = async (req, res) => { 
+  await productsService.deleteItem(+req.params.id);
+  return res.status(204).end();
+};
+
 module.exports = {
   allProducts,
   productbyID,
   postProduct,
+  deleteProduct,
 };
