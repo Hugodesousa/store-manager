@@ -32,8 +32,8 @@ const deleteItem = async (id) => {
 
 const editItem = async (newProduct) => { 
   const list = await productsModel.findAllProducts();
-  if (validationProductID(list, newProduct.id)) {
-    await productsModel.update(newProduct);
+  if (validationName(newProduct) && validationProductID(list, newProduct.id)) {
+  return productsModel.update(newProduct);
   }
 };
 

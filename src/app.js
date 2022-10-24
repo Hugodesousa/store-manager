@@ -32,10 +32,11 @@ app.use('/sales', routerSales);
 // você pode registrar suas rotas normalmente, como o exemplo acima
 // você deve usar o arquivo index.js para executar sua aplicação 
 app.use((error, _req, res, _next) => { 
-  if (error.name) {
-    res.status(error.status).send({ message: error.message });
+  if (error.name && error.status) {
+    console.log(error);
+   return res.status(error.status).send({ message: error.message });
   } 
-  res.status(500).send({ message: 'generic error' });
+ return res.status(500).send({ message: 'generic error' });
 });
 // app.use((_error, _req, _res, _next) => { 
 //   res.status(500).send({ message: 'eita' });
