@@ -30,9 +30,17 @@ const deleteItem = async (id) => {
   }
 };
 
+const editItem = async (newProduct) => { 
+  const list = await productsModel.findAllProducts();
+  if (validationProductID(list, newProduct.id)) {
+    await productsModel.update(newProduct);
+  }
+};
+
 module.exports = {
   getAllProducts,
   getProductsByID,
   postItem,
   deleteItem,
+  editItem,
 };

@@ -23,13 +23,26 @@ const creatSales = async (salesList) => {
   }
 };
 
-const getAllSales = async () => { 
+const getAllSales = async () => {
   const result = await salesModel.findAllSales();
   return result;
 };
 
 const getSalesByID = async (id) => {
+  const list = await salesModel.findAllSales();
+  const findID = list.some((el) => el.saleId === +id);
+  if (!findID) {
+    const error = new Error('Sale not found');
+    error.name = 'Sale not found';
+    error.status = 404;
+    throw error;
+  }
   const result = await salesModel.findSalesByID(id);
+  // const endResult = {
+  //   date: result.date,
+  //   productId: result.productId,
+  //   quantity: result.quantity,
+  // };
   return result;
 };
 

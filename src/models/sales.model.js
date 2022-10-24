@@ -18,23 +18,23 @@ const insertSale = async (salesList) => {
 
 const findAllSales = async () => { 
   const [result] = await connection.execute(`SELECT
-    t1.sale_id,
-    t2.date,
-    t1.product_id,
-    t1.quantity
-FROM sales_products AS t1
-    INNER JOIN sales AS t2 ON t2.id = t1.sale_id`);
+  t1.sale_id,
+  t2.date,
+  t1.product_id,
+  t1.quantity
+  FROM StoreManager.sales_products AS t1
+  INNER JOIN StoreManager.sales AS t2 ON t2.id = t1.sale_id`);
+  console.log('aquii', result);
   return camelize(result);
 };
 
 const findSalesByID = async (id) => { 
-  const [[sale]] = await connection.execute(`SELECT
-    t1.sale_id,
+  const [sale] = await connection.execute(`SELECT
     t2.date,
     t1.product_id,
     t1.quantity
-FROM sales_products AS t1
-    INNER JOIN sales AS t2 ON t2.id = t1.sale_id
+FROM StoreManager.sales_products AS t1
+    INNER JOIN StoreManager.sales AS t2 ON t2.id = t1.sale_id
     WHERE t1.sale_id = ?`, [id]);
   return camelize(sale);
 };

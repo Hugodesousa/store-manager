@@ -56,11 +56,11 @@
     "colId": "15ff3951-8b64-4ae5-b3f8-0ee7a898762d",
     "containerId": "",
     "name": "GET sales",
-    "url": "localhost:3000/sales/",
+    "url": "localhost:3000/sales/1",
     "method": "GET",
     "sortNum": 40000,
     "created": "2022-10-24T12:35:44.983Z",
-    "modified": "2022-10-24T12:35:44.983Z",
+    "modified": "2022-10-24T13:53:58.692Z",
     "headers": [],
     "params": [],
     "tests": []
