@@ -7,7 +7,6 @@ const postSales = async (req, res) => {
 
 const allSales = async (_req, res) => { 
   const result = await salesService.getAllSales();
- console.log('result', result);
   return res.status(200).json(result);
 };
 

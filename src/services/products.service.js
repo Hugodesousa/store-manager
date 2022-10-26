@@ -8,7 +8,6 @@ const getAllProducts = async () => {
 };
 
 const getProductsByID = async (id) => {
-  // console.log('aqui', typeof (id));
   const list = await productsModel.findAllProducts();
   if (validationProductID(list, id)) {
     const result = await productsModel.findProductsByID(id);
