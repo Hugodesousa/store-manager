@@ -39,8 +39,19 @@ FROM StoreManager.sales_products AS t1
   return camelize(sale);
 };
 
+const deleteSale = async (id) => {
+  const verifySale = await findSalesByID(id);
+  if (verifySale.length > 0) {
+    await connection.execute(`DELETE FROM StoreManager.sales 
+    WHERE id = ?;`, [id]);
+    return 'deleteOk';
+  }
+  return 'not foud';
+};
+
 module.exports = {
   insertSale,
   findAllSales,
   findSalesByID,
+  deleteSale,
 };

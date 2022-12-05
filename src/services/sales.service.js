@@ -38,18 +38,24 @@ const getSalesByID = async (id) => {
     throw error;
   }
   const result = await salesModel.findSalesByID(id);
-  // const endResult = {
-  //   date: result.date,
-  //   productId: result.productId,
-  //   quantity: result.quantity,
-  // };
   return result;
+};
+
+const deleteSale = async (id) => {
+  const result = await salesModel.deleteSale(id);
+  if (result === 'not foud') {
+    const error = new Error('Sale not found');
+    error.name = 'Sale not found';
+    error.status = 404;
+    throw error;
+  }
 };
 
 module.exports = {
   creatSales,
   getAllSales,
   getSalesByID,
+  deleteSale,
 };
 // for (let index = 0; salesList.length > index; index += 1) {
 //   // const test =

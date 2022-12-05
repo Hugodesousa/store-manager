@@ -15,8 +15,14 @@ const saleByID = async (req, res) => {
   return res.status(200).json(result);
 };
 
+const deleteSale = async (req, res) => { 
+  await salesService.deleteSale(+req.params.id);
+  return res.status(204).end();
+};
+
 module.exports = {
   postSales,
   allSales,
   saleByID,
+  deleteSale,
 };
