@@ -1,6 +1,5 @@
 const validationName = (newProduct) => {
   if (!newProduct.name) {
-    // console.log('if');
     const error = new Error('"name" is required');
     error.name = 'name not found';
     error.status = 400;

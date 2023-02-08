@@ -20,7 +20,6 @@ describe('Testa o retorno da da função "getAllProducts" na camada controler', 
   it('Testa se e retornada a lista com todos os produtos', async () => {
 
     const allProduct = await productsController.allProducts(req, res);
-    // console.log('sdf', allProduct);
     expect(allProduct).to.deep.equal(products)
   });
 

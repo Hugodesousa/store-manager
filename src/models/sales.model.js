@@ -24,7 +24,6 @@ const findAllSales = async () => {
   t1.quantity
   FROM StoreManager.sales_products AS t1
   INNER JOIN StoreManager.sales AS t2 ON t2.id = t1.sale_id`);
-  console.log('aquii', result);
   return camelize(result);
 };
 

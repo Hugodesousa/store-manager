@@ -57,14 +57,3 @@ module.exports = {
   getSalesByID,
   deleteSale,
 };
-// for (let index = 0; salesList.length > index; index += 1) {
-//   // const test =
-//   const test = await productsModel.findProductsByID(salesList[index].productId);
-//   const error = new Error();
-//   if (!test) {
-//     error.message = 'Product not found';
-//     error.name = 'Product not found';
-//     error.status = 404;
-//     throw error;
-//   }
-// }
