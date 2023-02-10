@@ -1,10 +1,11 @@
 const express = require('express');
+const cors = require('cors');
 require('express-async-errors');
 const routerProducts = require('./router/products.router');
 const routerSales = require('./router/sales.router');
 
 const app = express();
-
+app.use(cors());
 app.use(express.json());
 
 app.get('/', (_request, response) => {
