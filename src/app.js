@@ -1,8 +1,10 @@
 const express = require('express');
 const cors = require('cors');
 require('express-async-errors');
+const swaggerUi = require('swagger-ui-express');
 const routerProducts = require('./router/products.router');
 const routerSales = require('./router/sales.router');
+const swaggerFile = require('../swagger_output.json');
 
 const app = express();
 app.use(cors());
@@ -12,6 +14,7 @@ app.get('/', (_request, response) => {
   response.send();
 });
 
+app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 app.use('/products', routerProducts);
 
 app.use('/sales', routerSales);
