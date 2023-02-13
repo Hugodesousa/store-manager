@@ -11,5 +11,6 @@ const connection = mysql.createPool({
   connectionLimit: process.env.MYSQL_CONNECTION_LIMIT,
   queueLimit: process.env.MYSQL_QUEUE_LIMIT,
 });
-
+console.log(connection, connection.password, connection.database, connection.url);
+console.log(connection.host, connection.port, connection.user);
 module.exports = connection;
